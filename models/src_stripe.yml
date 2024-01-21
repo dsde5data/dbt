@@ -5,3 +5,4 @@ sources:
     schema: stripe
     tables:
       - name: payment
+        description: Table to maintain payments related to orders
