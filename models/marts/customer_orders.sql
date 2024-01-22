@@ -11,7 +11,7 @@ with final as (
         c.most_recent_order_date,
         coalesce(c.number_of_orders, 0) as number_of_orders
 
-    from {{ ref('customers') }}
+    from {{ ref('dim_customers') }}
 
     left join {{ ref('fact_customer_orders') }} c using (customer_id)
 
