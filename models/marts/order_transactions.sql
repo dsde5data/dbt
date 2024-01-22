@@ -1,13 +1,14 @@
 {{
     config(
-        materialized='incremental'
+        materialized='incremental',
+        unique_key='ORDERID'
     )
 }}
 with cte_transactions as 
 (select * from {{ ref('fact_order_transactions') }}
 {% if is_incremental() %}
     -- this filter will only be applied on an incremental run
-    where ORDER_DATE > (select max(ORDER_DATE) from {{ this }}) 
+    where ORDER_DATE > (select max(ORDER_DATE)-3 from {{ this }}) 
 {% endif %}
 
 )
