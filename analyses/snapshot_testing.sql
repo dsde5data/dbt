@@ -8,3 +8,14 @@ where Id=1;
 
 select * from PC_DBT_DB.DBT_HISTORY.orders_hist
 where Id=1;
+
+update jaffle_shop.customers
+set 
+Last_Name='Peter.'
+where Id=1;
+
+select * from jaffle_shop.customers
+where Id=1;
+
+select * from PC_DBT_DB.DBT_HISTORY.customers_hist
+where Id=1;
