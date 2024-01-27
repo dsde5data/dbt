@@ -43,8 +43,8 @@ models:
       +materialized: ephemeral
       +schema: stg
     core:
-      +materialized: ephemeral
-      +schema: core
-    marts:
       +materialized: table
-      +schema: bi
+      +schema: core_ali
+    marts:
+      +materialized: view
+      +schema: bi_new
