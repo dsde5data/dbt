@@ -39,6 +39,7 @@ models:
   jaffle_shop:
     +required_docs: true
     staging:
+      ##+required_tests: {"unique.*|not_null": 1}
       +materialized: ephemeral
       +schema: stg
     core:
